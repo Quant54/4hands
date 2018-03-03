@@ -238,5 +238,101 @@ function dwwp_get_studios(){
 //    ($city==="Новоси2бирск")? wp_send_json_success("Goodcity") :
    //wp_send_json(	$city);
 }
+
+
+
+function dwwp_get_studios_with_prices(){
+
+    if (isset($_GET["city"])) $city=$_GET["city"];
+
+    $args = array(
+        'post_type' => 'studio' ,
+        'orderby'=>'menu_order',
+        'order'=>'ASC',
+        'no_found_rows'=>false,
+        'update_post_term_cache'=>false,
+        'posts_per_page' => 10006,
+        'paged'=>1,
+        'tax_query' => array(
+
+            array(
+                'taxonomy' => 'city',
+                'field'    => 'name',
+                'terms'    => $city,
+            ),
+        ),
+
+    );
+
+    $studios = new WP_Query( $args  );
+    while ($studios->have_posts()):     $studios->the_post();
+        $ptitle = str_replace('&#187;','»',get_the_title());
+        $ptitle = str_replace('&#171;','«',$ptitle);
+
+    endwhile;
+
+  ?>
+    <div class="c-center">
+        <h3>Адреса:</h3>
+
+        <div class="price-items-box">
+<?php
+$i = 1740;
+while ($studios->have_posts()):     $studios->the_post();
+$i++;
+?>
+    <div class="price-item">
+        <div data-price="<?php echo $i;?>" class="pi-title2 pi-title" ><?php echo $city.", ".get_post_meta(get_the_id(), 'studio_address')[0];?></div>
+    </div>
+
+    <?php
+
+endwhile;
+
+?>
+
+        </div><!--class="price-items-box"-->
+
+
+        <?php
+        $i = 1740;
+        while ($studios->have_posts()):     $studios->the_post();
+            $i++;
+            ?>
+            <div id="price_<?php echo $i;?>" class="price_detail clearfix">
+                <ul class="price-column">
+                    <div class="price_title">Акции</div>
+
+                    <?php
+
+                    echo do_shortcode('[table id=1 /]');?>
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <?php
+
+        endwhile;
+
+        ?>
+
+
+
+
+
+
+        <div class="c-center">
+        </div>
+    </div>
+
+    <?php
+die();
+
+//    ($city==="Новоси2бирск")? wp_send_json_success("Goodcity") :
+    //wp_send_json( $city);
+}
+
 add_action('wp_ajax_get_studios','dwwp_get_studios');
 add_action( 'wp_ajax_nopriv_get_studios', 'dwwp_get_studios' );
+
+add_action('wp_ajax_get_studios_with_prices','dwwp_get_studios_with_prices');
+add_action( 'wp_ajax_nopriv_get_studios_with_prices', 'dwwp_get_studios_with_prices' );
