@@ -129,6 +129,26 @@ function dwwp_meta_callback2(){
 
                 ?></textarea>
         </div>
+        <div class="meta">
+            <div class="meta-th">
+                <span>Шаблон прайса</span>
+            </div>
+        </div>
+        <div class="meta-editor">
+            <?php
+
+            $content2 = trim( get_post_meta(get_the_ID(),'studio_price',true));
+
+            ?>
+            <textarea rows="10" name="studio_price" style="  border:1px solid #999999;
+  width:100%;
+  margin:5px 0;
+  padding:3px;"><?php
+
+                echo  trim($content2 );
+
+                ?></textarea>
+        </div>
 
     </div>
 <?php
@@ -171,6 +191,10 @@ function dwwp_meta_save2($post_id){
     if (isset($_POST['studio_description'])){
         update_post_meta($post_id,'studio_description',sanitize_text_field($_POST['studio_description']));
     }
+    if (isset($_POST['studio_price'])){
+        update_post_meta($post_id,'studio_price',sanitize_text_field($_POST['studio_price']));
+    }
+
     if (isset($_POST['studio_addinfo'])){
         update_post_meta($post_id,'studio_addinfo',sanitize_text_field($_POST['studio_addinfo']));
     }
@@ -301,11 +325,25 @@ endwhile;
             ?>
             <div id="price_<?php echo $i;?>" class="price_detail clearfix">
                 <ul class="price-column">
-                    <div class="price_title">Акции</div>
+                    <?php
+
+                    $pprice =  get_post_meta(get_the_id(), 'studio_price')[0];
+                    $explode_price = explode("#",$pprice);
+                    foreach ($explode_price as $item) {
+
+                        if ($item[0]=="{") echo " <div class=\"price-item shares\"><div class=\"price_title\">".substr($item,1,strlen($item)-2)."</div>";
+                        else echo do_shortcode($item)."</div>";
+
+                    }
+               //     print_r (explode("#",$pprice));
+
+
+                    ?>
+
 
                     <?php
 
-                    echo do_shortcode('[table id=1 /]');?>
+              //      echo do_shortcode('[table id=1 /]');?>
                 </ul>
             </div>
             <div class="clear"></div>
