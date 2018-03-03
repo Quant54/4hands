@@ -80,7 +80,8 @@ jQuery(document).ready(function () {
 
     jQuery(".city__item").bind("click", function () {
         var choosencity = jQuery(this).text();
-        jQuery.cookie("city", choosencity);
+
+        jQuery.cookie("city", choosencity , { expires: 7, path: '/'});
         jQuery(".studios-list").empty();
         defineCity();
         console.log("COOKIE:" + jQuery.cookie("city"));

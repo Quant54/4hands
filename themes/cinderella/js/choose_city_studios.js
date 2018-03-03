@@ -8,14 +8,14 @@ jQuery(document).ready(function () {
     });
 
     var cookiecity = jQuery.cookie("city");
-    console.log(cookiecity);
+    console.log("COOKIE "+cookiecity);
     if (typeof(cookiecity) == "undefined") {
         jQuery('#isyoutown').fadeIn(200);
     }
     jQuery("#cityyes").click(function () {
         jQuery('#isyoutown').fadeOut(200);
         var curcity = jQuery('#curcity').text();
-        jQuery.cookie("city", curcity);
+        jQuery.cookie("city", curcity , { expires: 7, path: '/'});
         var cookieValue = jQuery.cookie("city");
         console.log(cookieValue);
     });
