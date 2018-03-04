@@ -378,7 +378,14 @@
 
                             <div class="location location_mobile">
                                 <div class="location__icon icon showf-btn"></div>
+                                <div id="isyoutown2">
+                                    <div id="topcorner"></div>
+                                    <p> Ваш город <br><span id="curcity">Новосибирск</span>?</p>
+                                    <span class="choice" id="cityyes2">Да</span> / <span class="choice" id="cityno2">Нет</span>
+
+                                </div>
                             </div>
+
 
                         </div>
                     </div>

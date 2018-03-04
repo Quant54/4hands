@@ -4,6 +4,7 @@ jQuery(document).ready(function () {
     jQuery(".showf-btn").click(function () {
 
         jQuery('#isyoutown').fadeOut(200);
+        jQuery('#isyoutown2').fadeOut(200);
         jQuery('.ouibounce-modal_city').delay( 200 ).fadeIn(400);
     });
 
@@ -11,6 +12,7 @@ jQuery(document).ready(function () {
     console.log("COOKIE "+cookiecity);
     if (typeof(cookiecity) == "undefined") {
         jQuery('#isyoutown').fadeIn(200);
+        jQuery('#isyoutown2').fadeIn(200);
     }
     jQuery("#cityyes").click(function () {
         jQuery('#isyoutown').fadeOut(200);
@@ -20,8 +22,23 @@ jQuery(document).ready(function () {
         console.log(cookieValue);
     });
 
+    jQuery("#cityyes2").click(function () {
+        jQuery('#isyoutown2').fadeOut(200);
+        var curcity = jQuery('#curcity').text();
+        jQuery.cookie("city", curcity , { expires: 7, path: '/'});
+        var cookieValue = jQuery.cookie("city");
+        console.log(cookieValue);
+    });
+
         jQuery("#cityno").click(function () {
         jQuery('#isyoutown').fadeOut(200);
+            jQuery('#isyoutown2').fadeOut(200);
+        jQuery('.ouibounce-modal_city').delay( 200 ).fadeIn(400);
+    });
+
+    jQuery("#cityno2").click(function () {
+        jQuery('#isyoutown').fadeOut(200);
+        jQuery('#isyoutown2').fadeOut(200);
         jQuery('.ouibounce-modal_city').delay( 200 ).fadeIn(400);
     });
 

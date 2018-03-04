@@ -58,7 +58,7 @@
     text-align: center;
 }
 
-#isyoutown {
+#isyoutown,#isyoutown2 {
     color:#333;
     display:none;
     width: 205px;
@@ -70,14 +70,14 @@
     padding: 10px;
     border: 1px solid;
 }
-#isyoutown  span
+#isyoutown  span,#isyoutown2  span
 {
-    color:#333 !important;
+    color:#333;
     display:inline;
 }
-#isyoutown  span.choice:hover
+#cityyes:hover, #cityno:hover,#cityyes2:hover, #cityno2:hover
 {
-    color:#DD567B;
+    color:#DD567B !important;
     cursor:pointer;
 }
 #topcorner {
@@ -96,6 +96,10 @@
 .getorder {display: none;}
 
     #isyoutown {
+        left:-163px;
+    }
+
+    #isyoutown2 {
         left:-163px;
     }
 }
@@ -7329,6 +7333,7 @@ div.social_mobile {
 
 div.location_mobile {
     float: right;
+    position: relative;
 }
 
 .icon_phone_mobile {
