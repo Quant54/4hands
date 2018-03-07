@@ -223,7 +223,8 @@
                                             if (isset($_COOKIE["city"])) {
                                                 echo $_COOKIE["city"];
                                             } else {
-                                                echo $xml->ip->city;
+                                              if (isset($xml->ip->city))  echo $xml->ip->city;
+                                                  else echo "Новосибирск";
                                             }
                                             ?>
 

@@ -306,7 +306,7 @@ while ($studios->have_posts()):     $studios->the_post();
 $i++;
 ?>
     <div class="price-item">
-        <div data-price="<?php echo $i;?>" class="pi-title2 pi-title" ><?php echo $city.", ".get_post_meta(get_the_id(), 'studio_address')[0];?></div>
+        <div data-price="<?php echo $i;?>" class="pi-title2 pi-title" ><?php echo $city.", ".get_the_title();?></div>
     </div>
 
     <?php

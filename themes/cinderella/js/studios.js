@@ -69,10 +69,13 @@ jQuery(document).ready(function () {
             console.log('Позиция пользователя: ' +
                 position.coords.latitude + ", " + position.coords.longitude);
 
-            jQuery("#plat").html(position.coords.latitude);
-            jQuery("#plon").html(position.coords.longitude);
+        //jQuery("#plat").html(position.coords.latitude);
+         //   jQuery("#plon").html(position.coords.longitude);
             truelat = position.coords.latitude;
             truelon = position.coords.longitude;
+            jQuery("#plat").html(truelat);
+            jQuery("#plon").html(truelon);
+
             jQuery(".studios-list").empty();
             defineCity();
         }
@@ -115,7 +118,7 @@ jQuery(document).ready(function () {
                 xlon = truelon;
             }
 
-
+  //          currentCityItem="Москва";
             for (var i = 0; i < li; i++)
 
                 if (currentCityItem === apps[i].city.name) {
