@@ -70,14 +70,29 @@ $screen  = get_current_screen();
 //add_filter( 'post_type_link', 'remove_slug', 10, 3 );
 //add_action( 'admin_enqueue_scripts','dwwp_admin_enqueue_scripts');
 //
-//function dwwp_add_submenu_page() {
-//add_submenu_page(
-//	'edit.php?post_type=house',
-//	 'Настройки домов',
-//	 'Настройки домов',
-//	 'manage_options',
-//	 'settings_house',
-//	 'settings_admin_houses_callback'
+function dwwp_add_submenu_page() {
+add_submenu_page(
+	'edit.php?post_type=studio',
+	 'Настройки',
+	 'Настройки',
+	 'manage_options',
+	 'settings_house',
+	 'settings_admin_studios_callback'
+	);
+}
+
+add_action( 'admin_menu','dwwp_add_submenu_page');
+
+
+
+function plugin_admin_init(){
+//	$args1 = array(
+//		'type' => 'string',
+//		'sanitize_callback' => 'sanitize_text_field',
+//		'default' => 'none',
 //	);
-//}
-//add_action( 'admin_menu','dwwp_add_submenu_page');
+	register_setting( 'studios_group_settings', 'studios_city_options' );
+
+}
+
+add_action('admin_init', 'plugin_admin_init');
