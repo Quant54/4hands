@@ -8704,7 +8704,7 @@ ol.news-page__list {
     margin-bottom: 20px;
 }
 
-.pi-title {
+.pi-title, .pi-title2 {
     position: absolute;
     bottom: -21px;
     left: 8px;
@@ -8725,6 +8725,7 @@ ol.news-page__list {
     overflow: hidden;
     white-space: nowrap;
 }
+
 
 .pi-title:hover,
 .pi-title:focus {
