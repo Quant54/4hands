@@ -37,7 +37,7 @@ function click2() {
     jQuery(".pi-title2").each(function(index) {
 
         jQuery(this).on("click",function() {
-console.log("Wef");
+
             var dataPrice = jQuery(this).data("price");
             if (jQuery("#price_"+ dataPrice).is(':hidden')) {
             jQuery(".price_detail").each(function(index) {

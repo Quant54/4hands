@@ -30,7 +30,7 @@ $domain_city = esc_attr( get_option( 'studios_city_options' ) );
                 <div class="row row-address">
                     <div class="col-md-12">
 
-             
+
 
                         <div class="address_list">
                             <div class="f-contacts">
