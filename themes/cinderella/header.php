@@ -227,21 +227,24 @@
                                                                     elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
                                                                     else $ip = $remote;
 
+$issubdomain =false;
 
 
 
+                                                                    $domain_city1 = esc_attr( get_option( 'studios_city_options' ) );
+                                                                    if ( ( strlen( $domain_city1 ) > 0 ) && ( $domain_city1 != 'none' ) ) {
+$issubdomain = true;
+                                                                     $domaincity= get_term_by( 'slug', $domain_city1, 'city' )->name; } else  { $domaincity="Новосибирск";}
 
 
-
-
-                                            $result = file_get_contents("http://ipgeobase.ru:7020/geo?ip=" . $ip);
+                                                                    $result = file_get_contents("http://ipgeobase.ru:7020/geo?ip=" . $ip);
 
                                             $xml = new SimpleXMLElement($result);
                                             if (isset($_COOKIE["city"])) {
                                                 echo $_COOKIE["city"];
                                             } else {
                                               if (isset($xml->ip->city)) $mycity = $xml->ip->city;
-                                                  else $mycity =  "Новосибирск";
+                                                  else $mycity =  $domaincity;
                                                   echo $mycity;
                                             }
                                             ?>
@@ -258,7 +261,7 @@
                                     </div>
                                     <div id="isyoutown">
                                         <div id="topcorner"></div>
-                                        <p> Ваш город <br><span id="curcity"><?php  echo $mycity;?></span>?</p>
+                                        <p> Ваш город <br><span id="curcity"><?php  echo $domaincity;?></span>?</p>
                                         <span class="choice" id="cityyes">Да</span> / <span class="choice" id="cityno">Нет</span>
 
                                     </div>
@@ -416,7 +419,18 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="header-lower">
-                                    <h1 class="header-lower__title">Сеть экспресс-студий маникюра и педикюра</h1>
+                                    <h1 class="header-lower__title">Сеть экспресс-студий маникюра и педикюра <?php
+                                        if ($issubdomain){
+//                                         echo   substr($_SERVER['HTTP_HOST'],0,strpos($_SERVER['HTTP_HOST'],"."));
+                                       switch (substr($_SERVER['HTTP_HOST'],0,strpos($_SERVER['HTTP_HOST'],"."))) {
+                                            case "msk": echo "в Москве";
+                                            break;
+                                            case "nsk": echo "в Новосибирске";
+                                            break;
+                                       }
+                                        }
+
+                                        ?></h1>
 
                                     <h1 class="header-lower__title2">А вам это делали в четыре руки?!</h1>
 
