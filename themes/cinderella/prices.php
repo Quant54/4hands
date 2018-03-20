@@ -2,7 +2,7 @@
 <?php get_header();
 
 $domain_city = esc_attr( get_option( 'studios_city_options' ) );
-var_dump($domain_city);
+
 
 ?>
 
