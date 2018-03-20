@@ -217,7 +217,24 @@
                                             // } else {
                                             //     die('allow_url_fopen is disabled. file_get_contents would not work');
                                             // }
-                                            $result = file_get_contents("http://ipgeobase.ru:7020/geo?ip=" . $_SERVER['REMOTE_ADDR']);
+
+
+                                                                    $client  = @$_SERVER['HTTP_CLIENT_IP'];
+                                                                    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+                                                                    $remote  = @$_SERVER['REMOTE_ADDR'];
+                                                                    $result  = array('country'=>'', 'city'=>'');
+                                                                    if(filter_var($client, FILTER_VALIDATE_IP)) $ip = $client;
+                                                                    elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
+                                                                    else $ip = $remote;
+
+
+
+
+
+
+
+
+                                            $result = file_get_contents("http://ipgeobase.ru:7020/geo?ip=" . $ip);
 
                                             $xml = new SimpleXMLElement($result);
                                             if (isset($_COOKIE["city"])) {
@@ -240,7 +257,7 @@
                                     </div>
                                     <div id="isyoutown">
                                         <div id="topcorner"></div>
-                                        <p> Ваш город <br><span id="curcity">Новосибирск</span>?</p>
+                                        <p> Ваш город <br><span id="curcity"><?php  echo $xml->ip->city;?></span>?</p>
                                         <span class="choice" id="cityyes">Да</span> / <span class="choice" id="cityno">Нет</span>
 
                                     </div>
