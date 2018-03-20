@@ -222,7 +222,7 @@
                                                                     $client  = @$_SERVER['HTTP_CLIENT_IP'];
                                                                     $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
                                                                     $remote  = @$_SERVER['REMOTE_ADDR'];
-                                                                    $result  = array('country'=>'', 'city'=>'');
+
                                                                     if(filter_var($client, FILTER_VALIDATE_IP)) $ip = $client;
                                                                     elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
                                                                     else $ip = $remote;
@@ -240,8 +240,9 @@
                                             if (isset($_COOKIE["city"])) {
                                                 echo $_COOKIE["city"];
                                             } else {
-                                              if (isset($xml->ip->city))  echo $xml->ip->city;
-                                                  else echo "Новосибирск";
+                                              if (isset($xml->ip->city)) $mycity = $xml->ip->city;
+                                                  else $mycity =  "Новосибирск";
+                                                  echo $mycity;
                                             }
                                             ?>
 
@@ -257,7 +258,7 @@
                                     </div>
                                     <div id="isyoutown">
                                         <div id="topcorner"></div>
-                                        <p> Ваш город <br><span id="curcity"><?php  echo $xml->ip->city;?></span>?</p>
+                                        <p> Ваш город <br><span id="curcity"><?php  echo $mycity;?></span>?</p>
                                         <span class="choice" id="cityyes">Да</span> / <span class="choice" id="cityno">Нет</span>
 
                                     </div>
