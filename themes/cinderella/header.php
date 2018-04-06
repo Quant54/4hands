@@ -419,7 +419,10 @@ $issubdomain = true;
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="header-lower">
-                                    <h1 class="header-lower__title">Сеть экспресс-студий маникюра и педикюра <?php
+                                    <h1 class="header-lower__title">Сеть экспресс-студий маникюра и педикюра
+
+                                        <?php
+
                                         if ($issubdomain){
 //                                         echo   substr($_SERVER['HTTP_HOST'],0,strpos($_SERVER['HTTP_HOST'],"."));
                                        switch (substr($_SERVER['HTTP_HOST'],0,strpos($_SERVER['HTTP_HOST'],"."))) {
@@ -427,6 +430,14 @@ $issubdomain = true;
                                             break;
                                             case "nsk": echo "в Новосибирске";
                                             break;
+	                                       case "lipetsk": echo "в Липецке";
+		                                       break;
+	                                       case "spb": echo "в Санкт-Петербурге";
+		                                       break;
+	                                       case "brn": echo "в Барнауле";
+		                                       break;
+	                                       case "sochi": echo "в Сочи";
+		                                       break;
                                        }
                                         }
 

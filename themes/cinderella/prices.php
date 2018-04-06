@@ -105,6 +105,7 @@ $domain_city = esc_attr( get_option( 'studios_city_options' ) );
 														if ( $item[0] == "{" ) {
 															echo "<div class=\"price-item shares\"><div class=\"price_title\">" . substr( $item, 1, strlen( $item ) - 2 ) . "</div>";
 														} else {
+
 															echo do_shortcode( $item )."</div>";
 														}
 														echo "";
