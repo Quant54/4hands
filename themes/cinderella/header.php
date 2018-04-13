@@ -361,7 +361,7 @@ $issubdomain = true;
                     <div class="logo_wrapper clearfix">
 
                         <div class="logo logo_mobile">
-                            <a href="https://new.4hands.ru/"><img
+                            <a href="https://4hands.ru/"><img
                                         src="/wp-content/themes/cinderella/assets/images/tmp/logo_default.png"
                                         alt="4hands"></a>
                         </div>
