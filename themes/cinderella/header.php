@@ -58,9 +58,7 @@
         <div class="video-container" style="z-index: 1">
             <video class="video" muted="muted" loop>
                 <source src="/wp-content/themes/cinderella/video/header-screen_4hands_5.mp4"
-                        type="video/mp4; codecs=" avc1.42E01E
-                        , mp4a.40.2
-                " />
+                        type="video/mp4" codecs="avc1.42E01E, mp4a.40.2" />
             </video>
 
         </div>
@@ -239,14 +237,14 @@ $issubdomain = true;
 
                                                                     $result = file_get_contents("http://ipgeobase.ru:7020/geo?ip=" . $ip);
 
-                                            $xml = new SimpleXMLElement($result);
-                                            if (isset($_COOKIE["city"])) {
-                                                echo $_COOKIE["city"];
-                                            } else {
-                                              if (isset($xml->ip->city)) $mycity = $xml->ip->city;
-                                                  else $mycity =  $domaincity;
-                                                  echo $mycity;
-                                            }
+//                                            $xml = new SimpleXMLElement($result);
+//                                            if (isset($_COOKIE["city"])) {
+//                                                echo $_COOKIE["city"];
+//                                            } else {
+//                                              if (isset($xml->ip->city)) $mycity = $xml->ip->city;
+//                                                  else $mycity =  $domaincity;
+//                                                  echo $mycity;
+//                                            }
                                             ?>
 
                                         </p>
@@ -361,7 +359,7 @@ $issubdomain = true;
                     <div class="logo_wrapper clearfix">
 
                         <div class="logo logo_mobile">
-                            <a href="https://4hands.ru/"><img
+                            <a href="https://new.4hands.ru/"><img
                                         src="/wp-content/themes/cinderella/assets/images/tmp/logo_default.png"
                                         alt="4hands"></a>
                         </div>
