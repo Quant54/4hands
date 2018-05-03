@@ -78,7 +78,7 @@ function dwwp_show_services($atts, $content=null) {
                         <div class="service-item__info-container">
 
                             <div class="service-item__info-block">
-                                <a href="" class="service-item__name">'.esc_html(get_the_title()).'</a>
+                                <a href=" '.get_post_meta(get_the_id(), 'service_link')[0].'" class="service-item__name">'.esc_html(get_the_title()).'</a>
                             </div>
 
                             <div class="service-item__time-block clearfix">

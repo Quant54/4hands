@@ -41,8 +41,14 @@ function dwwp_meta_callback(){
         </div>
 
 
-
-
+        <div class="meta-row">
+            <div class="meta-th">
+                <label for="service_link" class="dwwp-row-title">Ссылка</label>
+            </div>
+            <div class="meta-td">
+                <input  type="text"  name="service_link" id="service_link" value="<?php if (!empty($dwwp_stored_meta['service_link'])) echo esc_attr ( $dwwp_stored_meta['service_link'][0]);  else  echo "#" ;?>">
+            </div>
+        </div>
 
         <div class="meta">
             <div class="meta-th">
@@ -64,6 +70,7 @@ function dwwp_meta_callback(){
 
                 ?></textarea>
         </div>
+
     </div>
 <?php
 };
@@ -86,6 +93,10 @@ function dwwp_meta_save($post_id){
     if (isset($_POST['service_time'])){
         update_post_meta($post_id,'service_time',sanitize_text_field($_POST['service_time']));
     }
+
+	if (isset($_POST['service_link'])){
+		update_post_meta($post_id,'service_link',sanitize_text_field($_POST['service_link']));
+	}
 
     if (isset($_POST['service_description'])){
         update_post_meta($post_id,'service_description',sanitize_text_field($_POST['service_description']));
