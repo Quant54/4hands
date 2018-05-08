@@ -410,8 +410,8 @@
                     </div>
                     <?php
                  if ($_COOKIE["noneedapp"] != 1) {
-
-	                 $applink="";
+echo '<div style="width:50px;height:50px; background-color:red;">f</div>';
+	                 $applink = "";
 	                 $google = "https://play.google.com/store/apps/details?id=pro.applika.app.app4hands&hl=ru";
 	                 $apple = "https://itunes.apple.com/ru/app/4hands-studio/id1130437261?mt=8";
 
@@ -434,7 +434,7 @@
 	                 if ($android === true) {
 		                 $applink=$google;
 	                 }
-	                 if ($applink!="") {
+	                 if ($applink != "") {
 
                     ?>
                     <div id="mobileapp">
