@@ -409,7 +409,7 @@
                         </div>
                     </div>
                     <?php
-                    if ($_COOKIE["noneedapp"] != 1) {
+//                    if ($_COOKIE["noneedapp"] != 1) {
                     ?>
                     <div id="mobileapp">
                         <?php $ua = strtolower($_SERVER['HTTP_USER_AGENT']);
@@ -417,7 +417,7 @@ $google = "https://play.google.com/store/apps/details?id=pro.applika.app.app4han
 $apple = "";
 $applink=$google;
                       //  if(stripos($ua,'android') !== false)      echo "<p>".$ua."</p>"; else   echo "<p> Desktop:".$ua."</p>";
-                      
+
 
                         ?>
 
@@ -427,7 +427,7 @@ $applink=$google;
                        <a id="appdownload"  href="<?php echo $applink?>"> Скачать</a>
 
                     </div>
-                    <?php } ?>
+<!--                    --><?php //} ?>
                 </div>
 
                 <div class="header-content">
