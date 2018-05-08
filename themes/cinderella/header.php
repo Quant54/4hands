@@ -224,14 +224,13 @@
                                                                     if(filter_var($client, FILTER_VALIDATE_IP)) $ip = $client;
                                                                     elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
                                                                     else $ip = $remote;
-
-$issubdomain =false;
+                                                                    $issubdomain =false;
 
 
 
                                                                     $domain_city1 = esc_attr( get_option( 'studios_city_options' ) );
                                                                     if ( ( strlen( $domain_city1 ) > 0 ) && ( $domain_city1 != 'none' ) ) {
-$issubdomain = true;
+                                                                        $issubdomain = true;
                                                                      $domaincity= get_term_by( 'slug', $domain_city1, 'city' )->name; } else  { $domaincity="Новосибирск";}
 
 
@@ -409,6 +408,26 @@ $issubdomain = true;
 
                         </div>
                     </div>
+                    <?php
+                    if ($_COOKIE["noneedapp"] != 1) {
+                    ?>
+                    <div id="mobileapp">
+                        <?php $ua = strtolower($_SERVER['HTTP_USER_AGENT']);
+$google = "https://play.google.com/store/apps/details?id=pro.applika.app.app4hands&hl=ru";
+$apple = "";
+$applink=$google;
+                      //  if(stripos($ua,'android') !== false)      echo "<p>".$ua."</p>"; else   echo "<p> Desktop:".$ua."</p>";
+                        echo $_COOKIE["noneedapp"];
+
+                        ?>
+
+                        <i  style="cursor:pointer;" id="closeapp" class=" iline fa fa-3x fa-times-circle-o" aria-hidden="true"></i>
+                        <img id="applogo"  src="<?php echo get_template_directory_uri()?>/assets/images/mobileapp.jpg">
+                        <p id="apptitle" ><b>Приложение 4hands для телефона </b></p>
+                       <a id="appdownload"  href="<?php echo $applink?>"> Скачать</a>
+
+                    </div>
+                    <?php } ?>
                 </div>
 
                 <div class="header-content">

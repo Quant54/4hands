@@ -9768,10 +9768,42 @@ h3.comments-title
 {margin-top:10px;}
 
 
-
-.sfsi_plus_wicons {
-display:block !important;
+#mobileapp {
+    display: flex;
+    align-items: center;
+    padding: 20px 4px 20px 4px;
+    background-color:white;
+}
+.iline {
+    display:inline-block;
+}
+#appdownload {
+    border: 1px solid #0006;
+    padding: 8px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: right;
+    color: #c41d54;
+    display: inline-block;
+}
+#applogo {
+    margin-left:5px;
+    display: inline-block;
+    width:50px;
+    height:50px;
+}
+#apptitle {
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid #09050580;
+    border-bottom: 1px solid #09050580;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 5px;
+    line-height: 1.2rem;
 }
 
-#sfsi_plus_floater {
-width:25px !important;}
