@@ -9769,7 +9769,11 @@ h3.comments-title
 
 
 #mobileapp {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 20px 4px 20px 4px;
     background-color:white;
@@ -9805,5 +9809,6 @@ h3.comments-title
     padding-right: 16px;
     margin-left: 5px;
     line-height: 1.2rem;
+}
 }
 

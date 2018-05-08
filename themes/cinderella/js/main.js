@@ -2,7 +2,7 @@
 
 jQuery(document).ready(function () {
     jQuery("#closeapp").click(function() {
-        jQuery("#mobileapp").hide();
+        // jQuery("#mobileapp").hide();
         jQuery.cookie("noneedapp", 1 , { expires: 7, path: '/'});
         console.log("closebutton");
     });
