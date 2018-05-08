@@ -431,7 +431,7 @@
 	                 if ($ipad || $iphone ) {
 		                 $applink=$apple;
 	                 }
-	                 if ($android === true) {
+	                 if ($android) {
 		                 $applink=$google;
 	                 }
 
