@@ -1,17 +1,17 @@
 /*Перемещение по блокам*/
 
 jQuery(document).ready(function () {
-    jQuery("#closeapp").click(function() {
-         jQuery("#mobileapp").hide();
-        jQuery.cookie("noneedapp", 1 , { expires: 7, path: '/'});
-        console.log("closebutton");
-    });
-
-    jQuery("#appdownload").click(function() {
-         jQuery("#mobileapp").hide();
-        jQuery.cookie("noneedapp", 1 , { expires: 7, path: '/'});
-
-    });
+    // jQuery("#closeapp").click(function() {
+    //      jQuery("#mobileapp").hide();
+    //     jQuery.cookie("noneedapp", 1 , { expires: 7, path: '/'});
+    //     console.log("closebutton");
+    // });
+    //
+    // jQuery("#appdownload").click(function() {
+    //      jQuery("#mobileapp").hide();
+    //     jQuery.cookie("noneedapp", 1 , { expires: 7, path: '/'});
+    //
+    // });
 
 
 
