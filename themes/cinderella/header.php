@@ -410,7 +410,7 @@
                     </div>
                     <?php
                  if ($_COOKIE["noneedapp"] != 1) {
-
+	                 echo '<div style="width:70px;height:30px; background-color:gray;">A:'.$_COOKIE["noneedapp"] .'</div>';
 	                 $applink = "";
 	                 $google = "https://play.google.com/store/apps/details?id=pro.applika.app.app4hands&hl=ru";
 	                 $apple = "https://itunes.apple.com/ru/app/4hands-studio/id1130437261?mt=8";
