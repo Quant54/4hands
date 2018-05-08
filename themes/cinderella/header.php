@@ -435,7 +435,7 @@
 		                 $applink=$google;
 	                 }
 
-	            
+
 	                 if ($applink != "") {
 
                     ?>
