@@ -409,15 +409,34 @@
                         </div>
                     </div>
                     <?php
-//                    if ($_COOKIE["noneedapp"] != 1) {
+                 if ($_COOKIE["noneedapp"] != 1) {
                     ?>
                     <div id="mobileapp">
-                        <?php $ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-$google = "https://play.google.com/store/apps/details?id=pro.applika.app.app4hands&hl=ru";
-$apple = "";
-$applink=$google;
-                      //  if(stripos($ua,'android') !== false)      echo "<p>".$ua."</p>"; else   echo "<p> Desktop:".$ua."</p>";
+                        <?php
+                        $applink="";
+                        $google = "https://play.google.com/store/apps/details?id=pro.applika.app.app4hands&hl=ru";
+                        $apple = "https://itunes.apple.com/ru/app/4hands-studio/id1130437261?mt=8";
 
+                        $iphone = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+                        $android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
+                        $palmpre = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
+                        $berry = strpos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
+                        $ipod = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
+                        $mobile = strpos($_SERVER['HTTP_USER_AGENT'],"Mobile");
+                        $symb = strpos($_SERVER['HTTP_USER_AGENT'],"Symbian");
+                        $operam = strpos($_SERVER['HTTP_USER_AGENT'],"Opera M");
+                        $htc = strpos($_SERVER['HTTP_USER_AGENT'],"HTC_");
+                        $fennec = strpos($_SERVER['HTTP_USER_AGENT'],"Fennec/");
+                        $winphone = strpos($_SERVER['HTTP_USER_AGENT'],"WindowsPhone");
+                        $wp7 = strpos($_SERVER['HTTP_USER_AGENT'],"WP7");
+                        $wp8 = strpos($_SERVER['HTTP_USER_AGENT'],"WP8");
+                        if ($ipad || $iphone  || $ipod === true) {
+	                        $applink=$apple;
+                        }
+                        if ($android === true) {
+	                        $applink=$google;
+                        }
+  if ($applink!="") {
 
                         ?>
 
@@ -427,7 +446,7 @@ $applink=$google;
                        <a id="appdownload"  href="<?php echo $applink?>"> Скачать</a>
 
                     </div>
-<!--                    --><?php //} ?>
+<?php }}     ?>
                 </div>
 
                 <div class="header-content">
