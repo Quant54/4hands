@@ -435,7 +435,7 @@
 		                 $applink=$google;
 	                 }
 
-	                 echo '<div style="width:70px;height:30px; background-color:gray;">A:'.$android.'</div>';
+	            
 	                 if ($applink != "") {
 
                     ?>
