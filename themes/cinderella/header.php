@@ -409,7 +409,7 @@
                         </div>
                     </div>
                     <?php
-                    echo '<div style="width:70px;height:30px; background-color:gray;">A:'.$_COOKIE["noneedapp"] .'</div>';
+//                    echo '<div style="width:70px;height:30px; background-color:gray;">A:'.$_COOKIE["noneedapp"] .'</div>';
                  if ($_COOKIE["noneedapp"] != 1) {
 
 	                 $applink = "";
