@@ -417,7 +417,7 @@ $google = "https://play.google.com/store/apps/details?id=pro.applika.app.app4han
 $apple = "";
 $applink=$google;
                       //  if(stripos($ua,'android') !== false)      echo "<p>".$ua."</p>"; else   echo "<p> Desktop:".$ua."</p>";
-                        echo $_COOKIE["noneedapp"];
+                      
 
                         ?>
 
