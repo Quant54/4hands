@@ -7,8 +7,8 @@ jQuery(document).ready(function () {
         console.log("closebutton");
     });
 
-    jQuery("#closeapp").click(function() {
-         jQuery("#appdownload").hide();
+    jQuery("#appdownload").click(function() {
+         jQuery("#mobileapp").hide();
         jQuery.cookie("noneedapp", 1 , { expires: 7, path: '/'});
 
     });
