@@ -119,8 +119,9 @@ jQuery(document).ready(function () {
             }
 
   //          currentCityItem="Москва";
-            for (var i = 0; i < li; i++)
-
+            for (var i = 0; i < li; i++) {
+ //                console.log(apps);
+ // console.log("i:"+i);
                 if (currentCityItem === apps[i].city.name) {
                     h++;
                     var x1 = xlat * Math.PI / 180;
@@ -135,11 +136,11 @@ jQuery(document).ready(function () {
                     }
                     setInterval(insertBlock(i, apps), 5000);
                 }
-            // }
+             }
 
 
      //       var m = parseFloat(apps[ind].lat);
-console.log('index'+ind);
+// console.log('index'+ind);
             if (ind>0)
             myMap.panTo(
                 // Координаты нового центра карты

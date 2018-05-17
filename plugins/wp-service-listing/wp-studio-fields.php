@@ -215,6 +215,7 @@ function dwwp_get_studios(){
 
     $args = array(
         'post_type' => 'studio' ,
+        'post_status' => 'publish',
         'orderby'=>'menu_order',
         'order'=>'ASC',
         'no_found_rows'=>false,
