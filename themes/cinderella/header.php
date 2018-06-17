@@ -445,17 +445,19 @@
 
 
                         ?>
-
-                        <i  style="cursor:pointer;" id="closeapp" class=" iline fa fa-3x fa-times-circle-o" aria-hidden="true"></i>
-                        <img id="applogo"  src="<?php echo get_template_directory_uri()?>/assets/images/mobileapp.jpg">
-                        <p id="apptitle" ><b>Приложение 4hands для телефона </b></p>
-                       <a id="appdownload"  href="<?php echo $applink?>"> Скачать</a>
+ 
+                        <i style="cursor:pointer;" id="closeapp" class=" iline fa fa-3x fa-times-circle-o"
+                           aria-hidden="true"></i>
+                        <img id="applogo" src="<?php echo get_template_directory_uri() ?>/assets/images/mobileapp.jpg">
+                        <p id="apptitle"><b>Приложение 4hands для телефона </b></p>
+                        <a id="appdownload" href="<?php echo $applink ?>"> Скачать</a>
 
                     </div>
-<?php }}     ?>
+	                 <?php }
+                 } ?>
                 </div>
 
-                <div class="header-content">
+                    <div class="header-content">
 
                     <div class="container">
                         <div class="row">
@@ -478,7 +480,19 @@
 		                                       break;
 	                                       case "brn": echo "в Барнауле";
 		                                       break;
+	                                       case "kazan": echo "в Казане";
+		                                       break;
+	                                       case "norilsk": echo "в Норильске";
+		                                       break;
+	                                       case "sevastopol": echo "в Севастополе";
+		                                       break;
+	                                       case "vladivostok": echo "в Владивостоке";
+		                                       break;
+	                                       case "kazan": echo "в Казане";
+		                                       break;
 	                                       case "sochi": echo "в Сочи";
+		                                       break;
+	                                       case "yalta": echo "в Ялте";
 		                                       break;
                                        }
                                         }
